@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
-
+//test
 
 // middleware
 app.use(express.static('public'));
