@@ -1,6 +1,7 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');*/
 
+@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&display=swap');
 body{
     margin: 20px 40px;
     font-size: 1.2rem;
@@ -64,7 +65,7 @@ form{
     padding: 30px;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
     border-radius: 10px;
-    background: #0080c0;
+    background: #006b9f;
 }
 input{
     padding: 10px 12px;

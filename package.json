@@ -1,5 +1,5 @@
 {
-  "name": "final_project_group4",
+  "name": "sdev255_Final_Project",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Jeff Zoller",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

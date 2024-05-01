@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
-//test
 
 // middleware
 app.use(express.static('public'));
@@ -22,7 +21,7 @@ app.use((req, res, next) => {
 // view engine
 app.set('view engine', 'ejs');
 
-// database connection
+/* TEST db connection */
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://sdev255:password255@cluster0.cezl033.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -46,6 +45,9 @@ async function run() {
   }
 }
 run().catch(console.dir);
+//End of TEST for db connection
+ 
+// actual database connection
 
 const dbURI = ('mongodb+srv://sdev255:password255@cluster0.cezl033.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 mongoose.connect(dbURI)
