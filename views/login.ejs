@@ -36,15 +36,21 @@
             const data = await res.json();
             console.log(data);
             if (data.errors) {
+               console.log('errors found');
                 emailError.textContent = data.errors.email;
                 passwordError.textContent = data.errors.password;
+               
             }
             if (data.user) {
+              console.log('no errors found');
                 location.assign('/');
+            
             }
         }
         catch (err) {
+           console.log('spit out errors found');
             console.log(err);
+         
         }
     });
 </script>

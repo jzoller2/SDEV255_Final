@@ -3,14 +3,16 @@ const User = require('../models/User');
 
 const requireAuth = (req, res, next) => {
     const token = req.cookies.jwt;
-
+  console.log('Made it to inner 1');
     // check json web token exists & is verified
     if (token) {
         jwt.verify(token, 'group 4 secret', (err, decodedToken) => {
             if (err) {
                 console.log(err.message);
+              console.log('Made it to inner 2');
                 res.redirect('/login');
             } else {
+              // displays token to console
                 console.log(decodedToken);
                 next();
             }
@@ -24,11 +26,12 @@ const requireAuth = (req, res, next) => {
 // check current user
 const checkUser = (req, res, next) => {
     const token = req.cookies.jwt;
-
+   console.log('Made it to step 1');
     if (token) {
         jwt.verify(token, 'group 4 secret', async (err, decodedToken) => {
             if (err) {
                 console.log(err.message);
+                console.log('Made it to step 2');
                 res.locals.user = null;
                 next();
             } else {
@@ -36,6 +39,8 @@ const checkUser = (req, res, next) => {
                     // console.log(decodedToken);   TEST LINE
                     let user = await User.findById(decodedToken.id);
                     req.user = user;
+                   console.log('Made it to step 3');
+                    console.log(req.user);
                     res.locals.user = user;
                     next();
                 } catch (error) {
@@ -48,8 +53,9 @@ const checkUser = (req, res, next) => {
     }
     else {
         res.locals.user = null;
+        console.log('Made it to step 4');
         next();
     }
 }
-
+console.log('exiting middleware.js');
 module.exports = { requireAuth, checkUser};

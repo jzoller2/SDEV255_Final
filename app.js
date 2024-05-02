@@ -56,12 +56,17 @@ mongoose.connect(dbURI)
 
 // routes
 app.use(checkUser);
+console.log('Made it to spot 1');
 app.get('/', (req, res) => res.render('home'));
+console.log('Made it to spot 2');
 app.get('/create', requireAuth, (req,res) => res.render('create'));
+console.log('Made it to spot 3');
 
 app.use(authRoutes);
+console.log('Made it to spot 5');
 app.use('/courses', requireAuth,courseRoutes);
 app.use('/cart', requireAuth, cartRoutes);
+console.log('Made it to spot 6');
 
 // 404 page
 app.use((req, res) => {
